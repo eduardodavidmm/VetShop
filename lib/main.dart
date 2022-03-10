@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vetshop/src/login/login_page.dart';
+import 'package:vetshop/src/utils/my_colors.dart';
 
 
 void main() {
@@ -18,10 +19,14 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'VetShop Delivery',
+      debugShowCheckedModeBanner: false,
       initialRoute: 'login',
       routes: {
         'login' : (BuildContext context) => LoginPage()
       },
+      theme: ThemeData(
+        primaryColor: MyColors.primaryColor
+      ),
     );
   }
 }
