@@ -4,7 +4,10 @@ const http = require('http');
 const server = http.createServer(app);
 const logger = require('morgan');
 const cors = require('cors');
-const res = require('express/lib/response');
+
+/* routes */
+
+const users = require('./routes/usersRoutes');
 
 const port = process.env.PORT || 3000;
 
@@ -20,17 +23,13 @@ app.disable('x-powered-by');
 
 app.set('port', port);
 
+/* calling routes */
+
+users(app);
+
 server.listen(3000, '192.168.17.227' || 'localhost', function() {
     console.log('aplicacion nodejs ' + process.pid + ' Iniciada')
 });
-
-app.get('/', (req, res) => {
-    res.send('Backend Root');
-})
-
-app.get('/test', (req, res) => {
-    res.send('Prueba');
-})
 
 
 //Error handler
@@ -40,3 +39,8 @@ app.use((err, req, res, next) => {
     res.status(err.status || 500).send(err.stack);
 });
 
+
+module.exports = {
+    app: app,
+    server: server
+}
