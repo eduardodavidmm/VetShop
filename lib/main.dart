@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:vetshop/src/login/login_page.dart';
-import 'package:vetshop/src/register/register_page.dart';
+import 'package:vetshop/src/pages/login/login_page.dart';
+import 'package:vetshop/src/pages/register/register_page.dart';
 import 'package:vetshop/src/utils/my_colors.dart';
 
 
