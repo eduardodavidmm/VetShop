@@ -1,8 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.vetshop.vetshop">
+    
+    <uses-permission android:name="android.permission.INERNET" />
+    
    <application
         android:label="vetshop"
         android:name="${applicationName}"
+        android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
